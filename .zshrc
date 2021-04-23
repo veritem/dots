@@ -91,7 +91,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -100,14 +99,22 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ls="lsd -F"
+alias la="lsd -AF"
+alias ll="lsd -lAF"
+alias lg="lsd -F --group-dirs=first"
+alias tree="lsd -AF --tree"
+alias pgstart='sudo service postgresql start'
+alias pgrun='sudo -u postgres psql'
 eval "$(starship init zsh)"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
-export PATH=$PATH:/usr/local/go/bin
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 
-export DENO_INSTALL="/home/veritem/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
