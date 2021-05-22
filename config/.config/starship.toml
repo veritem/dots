@@ -1,6 +1,0 @@
-[time]
-disable = false
-use_12hr = true
-format = "[$time]($style)"
-
-
