@@ -4,6 +4,7 @@ filetype indent on     " Load indent settings based on filetype
 call plug#begin('~/.config/nvim/plugged')
 
 " Vim inhancement
+
 Plug 'ciaranm/securemodelines'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'justinmk/vim-sneak'
@@ -25,13 +26,17 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-sensible'
 
 " Syntactic language support
+
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'sheerun/vim-polyglot'
-
+Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
+Plug 'gko/vim-coloresque'       " Colorize color codes 
+Plug 'pantharshit00/vim-prisma' " Language support for vim
 
 " Tmux navigator
 "
@@ -46,7 +51,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'dag/vim-fish'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-
+Plug 'mattn/emmet-vim'              " Emmet support
+Plug 'alvan/vim-closetag' " Vim auto closetag
 
 " Productivity
 
@@ -99,6 +105,12 @@ set noerrorbells            " Turn of error labels
 set tabstop=4               " Default tabstop
 set noerrorbells            " Turn off error bells "softtabstop=4
 set expandtab
+set autoread  " Auto load when a file changes from the disk
+set autoread                                                                                                                                                                                 
+au CursorHold * checktime " auto updatetime
+
+
+
 set statusline=\ %f%m\ 🐧\ LNS:\ %L\ PCT:\ %%%p\ COL:\ %v\ %=\ %{strftime('%c')} " Custom status line
 
 " Editor settings
@@ -115,7 +127,29 @@ set cmdheight=2             " Better display messages
 set shortmess+=c            " don't give |ins-completion-menu| messages.
 
 
+" Go to code definition
+"
+nmap <silent> gd <Plug>(coc-definition)       
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>                     
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+
 " rust setup
+
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
@@ -123,17 +157,17 @@ let g:rust_clip_command = 'xclip -selection clipboard'
 
 
 " Follow Rust code style rules
+
 au Filetype rust source ~/.config/nvim/scripts/spacetab.vim
 au Filetype rust set colorcolumn=100
 
 
-" NERDTree setup
-
-" Start NERDTree when Vim is started without file arguments.
+" Explorer setup
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
 
 
 nnoremap <C-n> :NERDTree<CR>
@@ -153,4 +187,18 @@ let g:coc_global_extensions = [
   \ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
+  \ 'coc-prisma',
   \ ]
+
+
+" Vim autoclose
+
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ 'typescriptreact': 'jsxRegion,tsxRegion',
+    \ 'javascriptreact': 'jsxRegion',
+    \ }
+
+let g:closetag_shortcut = '>'
+
