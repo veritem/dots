@@ -1,5 +1,5 @@
 #!/bin/bash
- 
+
 
 brew update
 
@@ -7,8 +7,7 @@ volta install node
 
 npm update -g
 
-pnpm add -g pnpm
+pnpm update --global
 
 
-rustup update
-
+rustup update stable
