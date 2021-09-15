@@ -119,6 +119,7 @@ alias vim="nvim"
 alias np="git init && git add . && git commit -m 'Initial commit'"
 alias main-init="git branch -m main"
 alias npwd="openssl rand -base64 12"
+alias clean-p="git branch --merged | grep -v \* | xargs git branch -D"
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
