@@ -1,0 +1,13 @@
+[user]
+	email = mugaboverite@gmail.com
+	name = Makuza Mugabo Verite
+	username = veritem
+	signingkey = 3D7B94B8079AD616
+[init]
+	defaultBranch = main
+[credential]
+	helper = store
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true

@@ -76,7 +76,11 @@ source $ZSH/oh-my-zsh.sh
 alias air='/home/veritem/go/bin/air'
 alias gum='git pull origin main'
 alias dev='cd ~/dev'
+alias new_repo='gh repo create'
+alias cat='bat'
 # User configuration
+
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
