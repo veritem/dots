@@ -5,3 +5,4 @@ source ~/dev/config/editor/pluginsconf/nerdetree.vim
 source ~/dev/config/editor/pluginsconf/vim-fugitive.vim
 source ~/dev/config/editor/pluginsconf/golps.vim
 source ~/dev/config/editor/pluginsconf/vim-prettier.vim
+source ~/dev/config/editor/pluginsconf/file-context.vim

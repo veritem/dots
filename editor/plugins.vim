@@ -1,5 +1,5 @@
 call plug#begin('~/.config/nvim/plugged')
-
+Plug 'Shougo/context_filetype.vim'
 Plug 'ciaranm/securemodelines'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'justinmk/vim-sneak'

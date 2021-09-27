@@ -14,3 +14,17 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+set updatetime=300
+set shortmess+=c " don't give |ins-completion-menu| messages.
+
+" Use K to show documentation in preview window
+nnoremap  K :call show_documentation()
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
