@@ -1,6 +1,7 @@
-source ~/.config/nvim/plugins.vim                
-source ~/.config/nvim/settings.vim
-source ~/.config/nvim/pluginsconf/coc-config.vim 
-source ~/.config/nvim/pluginsconf/nerdetree.vim
-source ~/.config/nvim/pluginsconf/vim-fugitive.vim
-source ~/.config/nvim/pluginsconf/golps.vim
+source ~/dev/config/editor/plugins.vim                
+source ~/dev/config/editor/settings.vim
+source ~/dev/config/editor/pluginsconf/coc-config.vim 
+source ~/dev/config/editor/pluginsconf/nerdetree.vim
+source ~/dev/config/editor/pluginsconf/vim-fugitive.vim
+source ~/dev/config/editor/pluginsconf/golps.vim
+source ~/dev/config/editor/pluginsconf/vim-prettier.vim

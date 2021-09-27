@@ -26,9 +26,11 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'mattn/emmet-vim'                              " Emmet support
 Plug 'wakatime/vim-wakatime'
-Plug 'neoclide/jsonc.vim'                           " Lanugage support for json
 Plug 'rstacruz/vim-closer'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " language support for golang
-
+Plug 'jparise/vim-graphql'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'codechips/coc-svelte', {'do': 'npm install'}
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 call plug#end()
 
