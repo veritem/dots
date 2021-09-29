@@ -32,6 +32,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " language support for golan
 Plug 'jparise/vim-graphql'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'codechips/coc-svelte', {'do': 'npm install'}
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }                                           
+Plug 'SirVer/ultisnips'                             " Snippets manager
+Plug 'honza/vim-snippets'
 call plug#end()
 

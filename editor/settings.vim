@@ -1,3 +1,29 @@
+" PYTHON PROVIDERS {{{
+
+if has('macunix')
+
+" OSX
+
+let g:python3_host_prog = '/usr/local/bin/python3' " -- Set python 3 provider
+
+let g:python_host_prog = '/usr/local/bin/python2' " --- Set python 2 provider
+
+elseif has('unix')
+
+" Ubuntu
+
+let g:python3_host_prog = '/usr/bin/python3' " -------- Set python 3 provider
+
+let g:python_host_prog = '/usr/bin/python3' " ---------- Set python 2 provider
+
+elseif has('win32') || has('win64')
+
+" Window
+
+endif
+
+" }}}
+
 syntax enable               " For rust.vim
 filetype plugin indent on   " For rust.vim
 filetype plugin on          " Load plugins based on filetype
@@ -34,3 +60,4 @@ set foldmethod=indent       " Fold methofs
 set foldnestmax=10          " Folder max lines
 set nofoldenable            " Enable code fodleiing
 set foldlevel=2             " Set the fold level
+
