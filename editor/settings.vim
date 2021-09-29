@@ -1,3 +1,5 @@
+syntax enable               " For rust.vim
+filetype plugin indent on   " For rust.vim
 filetype plugin on          " Load plugins based on filetype
 filetype indent on          " Load indent settings based on filetype     
 set clipboard+=unnamedplus  " setup neovim to copy to the clipboard
@@ -25,7 +27,7 @@ set nobackup                " Dessable backups
 set nowritebackup           " Stop writing backups
 set updatetime=300          " Delay the default message
 set cmdheight=2             " Better display messages 
-set shortmess+=c            " don't give |ins-completion-menu| messages.
+set shortmess+=c            " don't give ins-completion-menu messages.
 colorscheme blackbird       " The color theme for the Editor
 set pyxversion=2
 set foldmethod=indent       " Fold methofs
