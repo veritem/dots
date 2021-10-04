@@ -31,6 +31,10 @@ filetype indent on          " Load indent settings based on filetype
 set clipboard+=unnamedplus  " setup neovim to copy to the clipboard
 
 set background=dark
+colorscheme gruvbox
+
+
+set background=dark
 set mouse=a                 " Enable mouse usage in a colored column
 set relativenumber          " Relative line numbers
 set number                  " Line numbers
@@ -54,7 +58,6 @@ set nowritebackup           " Stop writing backups
 set updatetime=300          " Delay the default message
 set cmdheight=2             " Better display messages 
 set shortmess+=c            " don't give ins-completion-menu messages.
-colorscheme blackbird       " The color theme for the Editor
 set pyxversion=2
 set foldmethod=indent       " Fold methofs
 set foldnestmax=10          " Folder max lines

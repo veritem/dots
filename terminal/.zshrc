@@ -72,14 +72,15 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git docker zsh-autosuggestions)
 
+# User configuration
+
 source $ZSH/oh-my-zsh.sh
 alias air='/home/veritem/go/bin/air'
 alias gum='git pull origin main'
 alias dev='cd ~/dev'
 alias new_repo='gh repo create'
 alias cat='bat'
-# User configuration
-
+alias nwpd='openssl rand -base64 30'
 
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -105,23 +106,20 @@ alias cat='bat'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="lsd -F"
-alias la="lsd -AF"
-alias ll="lsd -lAF"
-alias lg="lsd -F --group-dirs=first"
-alias tree="lsd -AF --tree"
+alias ls="exa"
+alias la="exa -la"
+alias ll="exa -la"
+alias tree="exa -AF --tree"
 alias pgstart='sudo service postgresql start'
 alias pgrun='sudo -u postgres psql'
 alias vim="nvim"
 alias mysqlstart="~/dev/dots/scripts/mysqlstart.sh"
 alias mysqlrun="~/dev/dots/scripts/mysqlrun.sh"
-alias update="~/dev/dots/scripts/update.sh"
+alias update="~/dev/config/scripts/update.sh"
 eval "$(starship init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
+export GPG_TTY=$(tty)
 export PATH="/home/veritem/.local/bin:$PATH"
 
 # Generated for envman. Do not edit.
@@ -131,6 +129,10 @@ export PATH=$PATH:/usr/local/go/bin
 alias golangci-lint="$(go env GOPATH)/bin/golangci-lint"
 
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 # tabtab source for packages

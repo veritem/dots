@@ -4,6 +4,7 @@ Plug 'Shougo/context_filetype.vim'
 Plug 'ciaranm/securemodelines'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'justinmk/vim-sneak'
+Plug 'morhetz/gruvbox'
 Plug 'Matt-Gleich/blackbird.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'                           " Basically explorer manager
