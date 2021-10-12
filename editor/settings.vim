@@ -63,4 +63,3 @@ set foldmethod=indent       " Fold methofs
 set foldnestmax=10          " Folder max lines
 set nofoldenable            " Enable code fodleiing
 set foldlevel=2             " Set the fold level
-
