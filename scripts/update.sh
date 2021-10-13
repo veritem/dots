@@ -1,13 +1,11 @@
 #!/bin/bash
 
-
 brew update
-
-volta install node
 
 npm update -g
 
 pnpm update --global
 
+deno upgrade
 
 rustup update stable
