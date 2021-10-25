@@ -14,7 +14,7 @@ ZSH_THEME="robbyrussell"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )-
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -106,18 +106,20 @@ alias nwpd='openssl rand -base64 30'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="exa"
-alias la="exa -la"
-alias ll="exa -la"
-alias tree="exa -AF --tree"
+alias ls="exa --icons"
+alias la="exa -la --icons"
+alias ll="exa -la --icons"
+alias tree="exa --tree --icons"
 alias pgstart='sudo service postgresql start'
 alias pgrun='sudo -u postgres psql'
 alias vim="nvim"
-alias mysqlstart="~/dev/dots/scripts/mysqlstart.sh"
-alias mysqlrun="~/dev/dots/scripts/mysqlrun.sh"
+alias mysqlstart="~/dev/config/scripts/mysqlstart.sh"
+alias mysqlrun="~/dev/config/scripts/mysqlrun.sh"
 alias update="~/dev/config/scripts/update.sh"
+alias python="python3"
 eval "$(starship init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 
 export GPG_TTY=$(tty)
 export PATH="/home/veritem/.local/bin:$PATH"
@@ -128,7 +130,7 @@ export PATH=$PATH:/usr/local/go/bin
 
 alias golangci-lint="$(go env GOPATH)/bin/golangci-lint"
 
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+# export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
