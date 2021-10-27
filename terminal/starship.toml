@@ -4,8 +4,11 @@ disabled = true
 [jobs]
 disabled = true
 
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[λ](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
 
 [time]
-disabled = false
+disabled = true
 use_12hr = true
 format = "[$time]($style)"
