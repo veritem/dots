@@ -1,3 +1,4 @@
+let g:coc_global_config="$HOME/dev/config/editor/coc-settings.json"
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif

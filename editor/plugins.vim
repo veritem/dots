@@ -36,5 +36,6 @@ Plug 'codechips/coc-svelte', {'do': 'npm install'}
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }                                           
 Plug 'SirVer/ultisnips'                             " Snippets manager
 Plug 'honza/vim-snippets'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 call plug#end()
 
