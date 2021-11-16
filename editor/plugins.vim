@@ -45,5 +45,8 @@ Plug 'noahfrederick/vim-composer'     "|
 Plug 'noahfrederick/vim-laravel'
 Plug 'beanworks/vim-phpfmt'
 Plug 'Chiel92/vim-autoformat'
+Plug 'arnaud-lb/vim-php-namespace'
+Plug 'noahfrederick/vim-laravel'
+Plug 'noahfrederick/vim-composer'
 call plug#end()
 
