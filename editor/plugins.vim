@@ -27,7 +27,6 @@ Plug 'tpope/vim-commentary'                         " Fix easy commenting of the
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'mattn/emmet-vim'                              " Emmet support
-Plug 'wakatime/vim-wakatime'
 Plug 'rstacruz/vim-closer'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " language support for golang
 Plug 'jparise/vim-graphql'
@@ -48,5 +47,6 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'noahfrederick/vim-laravel'
 Plug 'noahfrederick/vim-composer'
+Plug 'wakatime/vim-wakatime'
 call plug#end()
 

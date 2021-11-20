@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
-let g:netrw_dirhist_7='/home/veritem/projects/haas/cli'
-let g:netrw_dirhist_6='/home/veritem/projects/haas/cli/pkg/cmd/auth'
-let g:netrw_dirhist_5='/home/veritem/projects/haas/cli/pkg/cmd'
-let g:netrw_dirhist_4='/home/veritem/projects/haas/cli/pkg'
-let g:netrw_dirhist_3='/home/veritem/projects/haas/cli'
-let g:netrw_dirhist_2='/home/veritem/.config/nvim/plugged'
-let g:netrw_dirhist_1='/home/veritem/.config/nvim'
