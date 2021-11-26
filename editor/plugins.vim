@@ -49,5 +49,10 @@ Plug 'noahfrederick/vim-laravel'
 Plug 'noahfrederick/vim-composer'
 Plug 'wakatime/vim-wakatime'
 Plug 'projekt0n/github-nvim-theme'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'sbdchd/neoformat'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 

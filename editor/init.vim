@@ -9,3 +9,4 @@ source ~/dev/config/editor/pluginsconf/vim-prettier.vim
 source ~/dev/config/editor/pluginsconf/file-context.vim
 source ~/dev/config/editor/pluginsconf/nerd-commentor.vim
 source ~/dev/config/editor/pluginsconf/rust.vim
+source ~/dev/config/editor/pluginsconf/telescope.vim
