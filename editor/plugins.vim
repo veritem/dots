@@ -48,5 +48,6 @@ Plug 'arnaud-lb/vim-php-namespace'
 Plug 'noahfrederick/vim-laravel'
 Plug 'noahfrederick/vim-composer'
 Plug 'wakatime/vim-wakatime'
+Plug 'projekt0n/github-nvim-theme'
 call plug#end()
 
