@@ -20,3 +20,6 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 noremap <leader>fc <cmd>Telescope file_browser<cr>
 
 
+" autocmd  Telescope find_files theme=dropdown
+
+
