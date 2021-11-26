@@ -20,6 +20,6 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 noremap <leader>fc <cmd>Telescope file_browser<cr>
 
 
-" autocmd  Telescope find_files theme=dropdown
-
-
+" local builtin = require('telescope.builtin')
+" local themes = require('telescope.themes')
+" builtin.find_files(themes.get_dropdown())
