@@ -54,5 +54,5 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sbdchd/neoformat'
 Plug 'neovim/nvim-lspconfig'
+Plug 'L3MON4D3/LuaSnip'
 call plug#end()
-
