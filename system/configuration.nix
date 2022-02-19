@@ -93,10 +93,13 @@
      nodePackages.pnpm
      pinentry_qt
      nix-direnv
- 
+     neofetch
+     tmux
+
      # gui programs 
      google-chrome
      slack
+     discord
      pcmanfm  
      firefox
      gnome3.gnome-tweaks
@@ -113,6 +116,7 @@
      picom 
      dmenu
 ];
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -33,7 +33,6 @@ Plug 'jparise/vim-graphql'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'codechips/coc-svelte', {'do': 'npm install'}
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }                                           
-Plug 'SirVer/ultisnips'                             " Snippets manager
 Plug 'honza/vim-snippets'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 Plug 'nvim-lua/plenary.nvim'
@@ -53,6 +52,5 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sbdchd/neoformat'
-Plug 'neovim/nvim-lspconfig'
-Plug 'L3MON4D3/LuaSnip'
+Plug 'LnL7/vim-nix'
 call plug#end()
