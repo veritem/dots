@@ -96,6 +96,8 @@
      neofetch
      tmux
 
+   
+
      # gui programs 
      google-chrome
      slack
