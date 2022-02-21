@@ -5,6 +5,7 @@ plugins=(git docker zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
+alias nvim="/etc/nvim.appimage"
 alias gts="/home/veritem/dev/gts/target/debug/gts"
 alias air='/home/veritem/go/bin/air'
 alias gum='git pull origin main'
@@ -18,13 +19,13 @@ alias ll="exa --long --header -a --icons"
 alias tree="exa --tree --icons"
 alias pgstart='sudo service postgresql start'
 alias pgrun='sudo -u postgres psql'
-alias vim="nvim"
+alias vim="/etc/nvim.appimage"
 alias mysqlstart="~/dev/config/scripts/mysqlstart.sh"
 alias mysqlrun="~/dev/config/scripts/mysqlrun.sh"
 alias update="~/dev/config/scripts/update.sh"
 alias python="python3"
-eval "$(starship init zsh)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+alias gcm="/home/veritem/dev/gcm/target/debug/gcm"
+
 
 export GPG_TTY=$(tty)
 export PATH="/home/veritem/.local/bin:$PATH"
@@ -44,10 +45,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# set DISPLAY variable to the IP automatically assigned to WSL2
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
-sudo /etc/init.d/dbus start &> /dev/null
 
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+eval "$(starship init zsh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+export PNPM_HOME="/home/veritem/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"

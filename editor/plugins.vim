@@ -1,4 +1,5 @@
 call plug#begin('~/.config/nvim/plugged')
+
 Plug 'preservim/nerdcommenter'
 Plug 'Shougo/context_filetype.vim'
 Plug 'ciaranm/securemodelines'
@@ -46,11 +47,12 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'noahfrederick/vim-laravel'
 Plug 'noahfrederick/vim-composer'
-Plug 'wakatime/vim-wakatime'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sbdchd/neoformat'
 Plug 'LnL7/vim-nix'
+Plug 'wakatime/vim-wakatime'
+
 call plug#end()
