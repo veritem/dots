@@ -18,8 +18,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
 Plug 'rust-lang/rust.vim'
-Plug 'rhysd/vim-clang-format' 
-Plug 'sheerun/vim-polyglot'
 Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'gko/vim-coloresque'                           " Colorize color codes 
 Plug 'pantharshit00/vim-prisma'                     " Language support for vim
