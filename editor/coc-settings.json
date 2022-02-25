@@ -41,7 +41,5 @@
     "signature.target": "echo",
     "javascript.suggestionActions.enabled": true,
     "typescript.suggestionActions.enabled": true,
-    "codeLens.enable": true,
-    "java.referencesCodeLens.enabled": true,
-    "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar"
+    "codeLens.enable": true
   }

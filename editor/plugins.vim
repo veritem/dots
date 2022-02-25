@@ -14,7 +14,6 @@ Plug 'ctrlpvim/ctrlp.vim'                           " Handles the the ctrl p com
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-sensible'
 Plug 'ekalinin/Dockerfile.vim'                      " Dockerfile syntax highlighter
-Plug 'sheerun/vim-polyglot'
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
 Plug 'rust-lang/rust.vim'
