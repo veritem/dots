@@ -23,9 +23,10 @@ alias vim="/etc/nvim.appimage"
 alias mysqlstart="~/dev/config/scripts/mysqlstart.sh"
 alias mysqlrun="~/dev/config/scripts/mysqlrun.sh"
 alias update="~/dev/config/scripts/update.sh"
+alias pgstart="~/dev/config/scripts/pgstart.sh"
 alias python="python3"
 alias gcm="/home/veritem/dev/gcm/target/debug/gcm"
-
+alias dutils="/home/veritem/dev/dutils/target/debug/dutils"
 
 export GPG_TTY=$(tty)
 export PATH="/home/veritem/.local/bin:$PATH"
