@@ -1,2 +1,2 @@
-### Confugrations for development environment
+> Confugrations for development environment
 

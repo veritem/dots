@@ -15,6 +15,13 @@ return require"packer".startup(function()
      -- fancy plugins 
      use 'rcarriga/nvim-notify' -- notifications
      use 'nvim-lualine/lualine.nvim' -- for status line
-     use 'romgrk/barbar.nvim' 
+     use 'romgrk/barbar.nvim'
+
+     -- Telescope vim
+     use {
+       'nvim-telescope/telescope.nvim',
+       requires = { {'nvim-lua/plenary.nvim'} }
+     }
+
 end)
 
