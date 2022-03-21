@@ -1,5 +1,5 @@
 local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
 -- leader set to space
 vim.g.mapleader = ' '

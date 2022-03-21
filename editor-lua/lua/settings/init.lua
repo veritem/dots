@@ -25,3 +25,5 @@ set.relativenumber = true
 set.cursorline = true
 
 set.hidden = true
+
+vim.cmd("colorscheme nightfox")
