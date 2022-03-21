@@ -42,18 +42,6 @@ volta install yarn
 
 echo "download and configure firacode nerd font"
 
-
-# install webi
-
- curl -sS https://webinstall.dev | zsh
-
-
-export PATH="/home/veritem/.local/bin:$PATH"
-
-echo "reload the terminal"
-
-webi install lsd
-
 # setup startship
 
 curl -fsSL https://starship.rs/install.sh | bash
