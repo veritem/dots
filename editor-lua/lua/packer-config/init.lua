@@ -10,5 +10,11 @@ return require"packer".startup(function()
      use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
      use 'L3MON4D3/LuaSnip' -- Snippets plugin
      use 'onsails/lspkind-nvim'
+
+
+     -- fancy plugins 
+     use 'rcarriga/nvim-notify' -- notifications
+     use 'nvim-lualine/lualine.nvim' -- for status line
+     use 'romgrk/barbar.nvim' 
 end)
 
