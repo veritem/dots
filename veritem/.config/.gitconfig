@@ -1,0 +1,7 @@
+[user]
+	email = mugaboverite@gmail.com
+	name = Makuza Mugabo Verite
+[commit]
+    gpgsign = true
+[tag]
+    gpgSign = trues
