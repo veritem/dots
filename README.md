@@ -1,2 +1,1 @@
-> Confugrations for development environment
-
+### dots configs
