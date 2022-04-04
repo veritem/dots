@@ -1,7 +1,5 @@
 local set = vim.opt
 
-vim.notify = require("notify")
-
 
 set.expandtab = true
 set.smarttab = true
@@ -28,4 +26,3 @@ set.cursorline = true
 
 set.hidden = true
 
-vim.cmd("colorscheme nightfox")
