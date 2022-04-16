@@ -4,7 +4,6 @@ set TERM xterm-256color
 set EDITOR nvim
 
 
-# Theme name: sashimi
 
 function fish_prompt
     set -l last_status $status
@@ -29,7 +28,7 @@ function fish_prompt
 
     if [ (_git_branch_name) ]
 
-        if test (_git_branch_name) = main
+        if test (_git_branch_name) = master
             set -l git_branch (_git_branch_name)
             set git_info "$normal git:($red$git_branch$normal)"
         else
@@ -87,7 +86,7 @@ if status is-interactive
 end
 
 
-# Functions needed for !! and !$
+#### Functions needed for !! and !$ ####
 
 function __history_previous_command
     switch (commandline -t)
@@ -124,12 +123,12 @@ function _plugin-bang-bang_uninstall --on-event plugin-bang-bang_uninstall
     functions --erase _plugin-bang-bang_uninstall
 end
 
-# ALIASES
+#### End of functions needed for !! and !$ ####
 
+#### ALIASES ####
 
 alias v='nvim'
 
-# navigation 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias .3='cd ../../..'
@@ -141,3 +140,18 @@ alias ls='exa -al --color=always --group-directories-first'
 alias la='exa -a --color=always --group-directories-first'
 alias ll='exa -l --color=always --group-directories-first'
 alias lt='exa -aT --color=always --group-directories-first'
+alias tree='exa -aT --color=always --group-directories-first'
+alias cat='bat'
+
+alias g='git'
+alias gcm='git commit'
+alias gco='git checkout'
+alias gcl='git clone'
+
+
+alias mysqlstart="~/dev/config/veritem/scripts/mysqlstart.sh"
+alias mysqlrun="~/dev/config/veritem/scripts/mysqlrun.sh"
+alias update="~/dev/config/veritem/scripts/update.sh"
+alias pgstart="~/dev/config/veritem/scripts/pgstart.sh"
+
+#### END ALIASES ####
