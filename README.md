@@ -1,1 +1,1 @@
-### dots configs 
+### verite's dotfile config
