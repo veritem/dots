@@ -1,4 +1,4 @@
-set -U fish_user_paths $HOME/.bin/ $HOME/.local/bin/ /opt/homebrew/bin/
+set -U fish_user_paths $HOME/.bin/ $HOME/.local/bin/ /opt/homebrew/bin/ /opt/homebrew/bin/starship
 set fish_greeting # Supresses the fish's intro message
 set TERM xterm-256color
 set EDITOR nvim
@@ -155,3 +155,5 @@ alias update="~/dev/config/veritem/scripts/update.sh"
 alias pgstart="~/dev/config/veritem/scripts/pgstart.sh"
 
 #### END ALIASES ####
+eval (starship init fish)
+
