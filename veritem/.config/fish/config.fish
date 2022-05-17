@@ -1,11 +1,10 @@
-set -U fish_user_paths $HOME/.bin/ $HOME/.local/bin/ /opt/homebrew/bin/ /opt/homebrew/bin/starship ~/Library/Android/sdk/emulator/
-
-
-
+set -U fish_user_paths $HOME/.bin/ $HOME/.local/bin/ /opt/homebrew/bin/
 set fish_greeting # Supresses the fish's intro message
 set TERM xterm-256color
 set EDITOR nvim
-set PATH $HOME/.cargo/bin $PATH
+set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths # work around to make rust work
+        
+
 
 function fish_prompt
     set -l last_status $status
@@ -155,11 +154,5 @@ alias mysqlstart="~/dev/config/veritem/scripts/mysqlstart.sh"
 alias mysqlrun="~/dev/config/veritem/scripts/mysqlrun.sh"
 alias update="~/dev/config/veritem/scripts/update.sh"
 alias pgstart="~/dev/config/veritem/scripts/pgstart.sh"
-alias rsync="rsync -az --info=progress2"
 
 #### END ALIASES ####
-eval (starship init fish)
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/veritem/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/veritem/Downloads/google-cloud-sdk/path.fish.inc'; end
