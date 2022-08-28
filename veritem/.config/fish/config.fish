@@ -154,5 +154,14 @@ alias mysqlstart="~/dev/config/veritem/scripts/mysqlstart.sh"
 alias mysqlrun="~/dev/config/veritem/scripts/mysqlrun.sh"
 alias update="~/dev/config/veritem/scripts/update.sh"
 alias pgstart="~/dev/config/veritem/scripts/pgstart.sh"
+alias python="python3"
+alias air="~/go/bin/air"
 
 #### END ALIASES ####
+
+set -gx PNPM_HOME "/Users/veritem/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
