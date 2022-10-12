@@ -27,6 +27,7 @@ alias pgstart="~/dev/config/scripts/pgstart.sh"
 alias python="python3"
 alias gcm="/home/veritem/dev/gcm/target/debug/gcm"
 alias dutils="/home/veritem/dev/dutils/target/debug/dutils"
+alias sls="sudo netstat -tulpn | grep LISTEN"
 
 export GPG_TTY=$(tty)
 export PATH="/home/veritem/.local/bin:$PATH"
