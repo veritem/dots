@@ -1,6 +1,7 @@
 return require"packer".startup(function()
      use 'wbthomason/packer.nvim'
-     use 'EdenEast/nightfox.nvim'
+     --  use 'EdenEast/nightfox.nvim'
+     use 'folke/tokyonight.nvim'
      use 'kyazdani42/nvim-tree.lua'
      use 'wakatime/vim-wakatime'
      use 'projekt0n/github-nvim-theme'
