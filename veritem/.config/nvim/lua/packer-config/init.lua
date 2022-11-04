@@ -1,20 +1,20 @@
 return require"packer".startup(function()
      use 'wbthomason/packer.nvim'
-     --  use 'EdenEast/nightfox.nvim'
      use 'folke/tokyonight.nvim'
      use 'kyazdani42/nvim-tree.lua'
      use 'wakatime/vim-wakatime'
-     use 'projekt0n/github-nvim-theme'
-     use 'neovim/nvim-lspconfig'
-     use 'williamboman/nvim-lsp-installer'
-     use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-     use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
      use 'L3MON4D3/LuaSnip' -- Snippets plugin
-     use 'onsails/lspkind-nvim'
+     use 'neovim/nvim-lspconfig'
+     use 'onsails/lspkind-nvim' -- Add auto completetion to LSP
+     use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+     use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
+     use 'hrsh7th/nvim-cmp' -- code auto-completion
      use 'kyazdani42/nvim-web-devicons' 
+     use 'williamboman/mason.nvim'
 
 
+     require("mason").setup()
+    
      -- fancy plugins 
      use 'rcarriga/nvim-notify' -- notifications
      use 'nvim-lualine/lualine.nvim' -- for status line
