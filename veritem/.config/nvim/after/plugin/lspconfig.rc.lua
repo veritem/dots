@@ -15,13 +15,26 @@ local on_attach = function(client, bufnr)
   end
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" }
 }
 
-nvim_lsp.sumneko_lua.setup {
+nvim_lsp.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.lua_ls.setup {
   on_attach = on_attach,
   settings = {
     Lua = {

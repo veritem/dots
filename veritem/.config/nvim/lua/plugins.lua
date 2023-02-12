@@ -41,8 +41,6 @@ packer.startup(function(use)
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
   }
-
-  use 'rust-lang/rust.vim'
-  use 'simrat39/rust-tools.nvim'
+  use 'wakatime/vim-wakatime'
 
 end)
