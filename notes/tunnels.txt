@@ -1,0 +1,13 @@
+To use cloudflared
+
+
+cloudflared tunnel --url http://localhost:$PORT
+
+
+To configure it with your domain
+
+1. cloudflared tunnel login
+2. cloudflared tunnel create local
+3. cloudflared tunnel route dns local http://local.yourdomain.com
+4. cloudflared tunnel run --url http://localhost:9999 local
+
