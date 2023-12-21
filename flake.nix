@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-  };
+	};
 
   outputs = inputs: {
     defaultPackage.x86_64-linux = inputs.home-manager.defaultPackage.x86_64-linux;
@@ -17,9 +17,7 @@
         system = "aarch64-darwin";
         homeDirectory = "/Users/veritem";
         username = "veritem";
-        configuration = {
-          imports = [  ./home.nix ];
-        };
+		configuration = import /home/veritem/dev/dots/home.nix;
       };
     };
   };
