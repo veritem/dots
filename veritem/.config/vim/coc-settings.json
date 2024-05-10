@@ -1,0 +1,45 @@
+  {
+    "suggest.noselect": false,
+    "coc.preferences.formatOnSaveFiletypes": [
+      "javascript",
+      "typescript",
+      "typescriptreact",
+      "javascriptreact",
+      "typescript.tsx",
+      "graphql",
+      "prisma"
+    ],
+    "languageserver": {
+      "golang": {
+        "command": "gopls",
+        "rootPatterns": [
+          "go.mod",
+          ".vim/",
+          ".git/",
+          ".hg/"
+        ],
+        "filetypes": [
+          "go"
+        ]
+      },
+      "golangci-lint-languageserver": {
+        "command": "golangci-lint-langserver",
+        "filetypes": [
+          "go"
+        ],
+        "initializationOptions": {
+          "command": [
+            "golangci-lint",
+            "run",
+            "--out-format",
+            "json"
+          ]
+        }
+      }
+    },
+    "diagnostic.messageTarget": "echo",
+    "signature.target": "echo",
+    "javascript.suggestionActions.enabled": true,
+    "typescript.suggestionActions.enabled": true,
+    "codeLens.enable": true
+  }
