@@ -10,12 +10,11 @@ if status is-interactive
 end
 
 #### ALIASES ####
-
-alias mongostart="~/dev/config/veritem/scripts/mongostart.sh"
-alias mysqlstart="~/dev/config/veritem/scripts/mysqlstart.sh"
-alias mysqlrun="~/dev/config/veritem/scripts/mysqlrun.sh"
-alias update="~/dev/config/veritem/scripts/update.sh"
-alias pgstart="~/dev/config/veritem/scripts/pgstart.sh"
+alias mongostart="~/dev/config/scripts/mongostart.sh"
+alias mysqlstart="~/dev/config/scripts/mysqlstart.sh"
+alias mysqlrun="~/dev/config/scripts/mysqlrun.sh"
+alias update="~/dev/config/scripts/update.sh"
+alias pgstart="~/dev/config/scripts/pgstart.sh"
 alias python="python3"
 alias air="~/go/bin/air"
 alias vim="nvim"
@@ -39,7 +38,6 @@ set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths # work around to make r
 set -U fish_user_paths $HOME/.local/bin $fish_user_paths
 
 # deno
-
 export DENO_INSTALL="/Users/veritem/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
