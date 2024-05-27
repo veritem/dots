@@ -19,6 +19,9 @@ vim.opt.clipboard = 'unnamedplus'
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- Enable indentation when starting a new line
+vim.opt.smartindent = true
+
 -- Save undo history
 vim.opt.undofile = true
 

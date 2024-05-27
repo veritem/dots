@@ -5,13 +5,7 @@ return {
     notify_on_error = false,
     format_on_save = function(bufnr)
       -- disable files without standard formatting style
-      local disable_filetypes = {
-        c = true,
-        cpp = true,
-        javascript = true,
-        typescript = true,
-        typescriptreact = true,
-      }
+      local disable_filetypes = {}
 
       return {
         timeout_ms = 500,
