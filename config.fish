@@ -10,11 +10,6 @@ if status is-interactive
 end
 
 #### ALIASES ####
-alias mongostart="~/dev/config/scripts/mongostart.sh"
-alias mysqlstart="~/dev/config/scripts/mysqlstart.sh"
-alias mysqlrun="~/dev/config/scripts/mysqlrun.sh"
-alias update="~/dev/config/scripts/update.sh"
-alias pgstart="~/dev/config/scripts/pgstart.sh"
 alias python="python3"
 alias air="~/go/bin/air"
 alias vim="nvim"
@@ -32,7 +27,7 @@ set -gx PATH "$PNPM_HOME" $PATH
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-# rust 
+# rust
 
 set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths # work around to make rust work
 set -U fish_user_paths $HOME/.local/bin $fish_user_paths
