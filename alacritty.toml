@@ -1,5 +1,5 @@
 import = [
-  "~/.config/alacritty/catppuccin-late.toml"
+  "~/.config/alacritty/catppuccin-mocha.toml"
 ]
 
 [env]

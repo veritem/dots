@@ -11,10 +11,13 @@ end
 
 #### ALIASES ####
 alias python="python3"
-alias air="~/go/bin/air"
 alias vim="nvim"
 alias v="nvim"
-alias vi="nvim"
+alias ff="fzf --preview='cat {}'"
+alias fn="nvim $(fzf --preview='cat {}')"
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 #### END OF ALIASES ####
 
@@ -36,5 +39,4 @@ set -U fish_user_paths $HOME/.local/bin $fish_user_paths
 export DENO_INSTALL="/Users/veritem/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
-source /Users/veritem/.docker/init-fish.sh || true # Added by Docker Desktop
 eval "$(/opt/homebrew/bin/brew shellenv)"
