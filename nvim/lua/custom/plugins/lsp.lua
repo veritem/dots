@@ -2,11 +2,17 @@ return { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for neovim
-    { 'williamboman/mason.nvim', opts = {
-      ensure_installed = {
-        'rust_analyzer',
+    {
+      'williamboman/mason.nvim',
+      opts = {
+        ensure_installed = {
+          'rust_analyzer',
+          'clangd',
+          'ruff_lsp',
+          'gopls',
+        },
       },
-    } },
+    },
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
@@ -44,12 +50,8 @@ return { -- LSP Configuration & Plugins
     --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
     --    function will be executed to configure the current buffer
     vim.api.nvim_create_autocmd('LspAttach', {
-      group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+      group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
       callback = function(event)
-        -- NOTE: Remember that lua is a real programming language, and as such it is possible
-        -- to define small helper and utility functions so you don't have to repeat yourself
-        -- many times.
-        --
         -- In this case, we create a function that lets us more easily define mappings specific
         -- for LSP related items. It sets the mode, buffer and description for us each time.
         local map = function(keys, func, desc)
@@ -134,9 +136,14 @@ return { -- LSP Configuration & Plugins
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
-      clangd = {},
+      clangd = {
+        capabilities = capabilities,
+        filetypes = { 'cpp', 'c' },
+      },
       gopls = {},
-      pyright = {},
+      dockerls = {},
+      docker_compose_language_service = {},
+      ruff_lsp = {},
       rust_analyzer = {
         capabilities = capabilities,
         filetypes = { 'rust' },
@@ -157,9 +164,6 @@ return { -- LSP Configuration & Plugins
       tsserver = {},
 
       lua_ls = {
-        -- cmd = {...},
-        -- filetypes { ...},
-        -- capabilities = {},
         settings = {
           Lua = {
             runtime = { version = 'LuaJIT' },
