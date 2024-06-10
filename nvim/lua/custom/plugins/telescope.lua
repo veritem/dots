@@ -60,6 +60,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
           '.next',
           '.sveltekit',
           '.venv',
+          '.docker',
         },
       },
       -- },
