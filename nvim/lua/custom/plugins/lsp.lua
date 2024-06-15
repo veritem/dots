@@ -8,8 +8,9 @@ return { -- LSP Configuration & Plugins
         ensure_installed = {
           'rust_analyzer',
           'clangd',
-          'ruff_lsp',
+          'pyright',
           'gopls',
+          'lua_ls',
         },
       },
     },
@@ -107,15 +108,14 @@ return { -- LSP Configuration & Plugins
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
-      clangd = {
-        capabilities = capabilities,
-        filetypes = { 'cpp', 'c' },
-        settings = {
-          ['clangd'] = {},
-        },
-      },
       gopls = {},
       dockerls = {},
+      sqlls = {},
+      svelte = {},
+      prismals = {},
+      ltex = {},
+      astro = {},
+      terraformls = {},
       docker_compose_language_service = {},
       ruff_lsp = {},
       rust_analyzer = {
