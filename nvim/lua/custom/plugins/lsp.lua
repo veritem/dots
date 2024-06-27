@@ -4,21 +4,14 @@ return { -- LSP Configuration & Plugins
     -- Automatically install LSPs and related tools to stdpath for neovim
     {
       'williamboman/mason.nvim',
-      opts = {
-        ensure_installed = {
-          'rust_analyzer',
-          'clangd',
-          'pyright',
-          'gopls',
-          'lua_ls',
-        },
-      },
+      config = true,
     },
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
     -- Useful status updates for LSP.
     { 'j-hui/fidget.nvim', opts = {} },
+    { 'folke/neodev.nvim', opts = {} },
   },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
@@ -117,7 +110,7 @@ return { -- LSP Configuration & Plugins
       astro = {},
       terraformls = {},
       docker_compose_language_service = {},
-      ruff_lsp = {},
+      pyright = {},
       rust_analyzer = {
         capabilities = capabilities,
         filetypes = { 'rust' },
