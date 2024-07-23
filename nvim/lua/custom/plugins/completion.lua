@@ -25,9 +25,6 @@ return { -- Autocompletion
 
     -- good snippets for many programming languages
     'rafamadriz/friendly-snippets',
-
-    'luckasRanarison/tailwind-tools.nvim',
-    'onsails/lspkind-nvim',
   },
   config = function()
     -- See `:help cmp`
@@ -97,15 +94,6 @@ return { -- Autocompletion
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
-      },
-    }
-  end,
-  opts = function()
-    return {
-      formatting = {
-        format = require('lspkind').cmp_format {
-          before = require('tailwind-tools.cmp').lspkind_format,
-        },
       },
     }
   end,
