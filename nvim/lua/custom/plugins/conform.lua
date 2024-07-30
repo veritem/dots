@@ -25,7 +25,6 @@ return {
       -- typescript = { 'eslint_d' },
       -- typescriptreact = { 'eslint_d' },
       ['*'] = { 'codespell' },
-
       ['_'] = { 'trim_whitespace' },
     },
   },
