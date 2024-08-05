@@ -99,9 +99,8 @@ return { -- LSP Configuration & Plugins
       prismals = {},
       ltex = {},
       astro = {},
-      autotools_ls = {}, -- for make files support
+      autotools_ls = {}, -- for Make files support
       terraformls = {},
-      denols = {},
       yamlls = {},
       docker_compose_language_service = {},
       pyright = {},
