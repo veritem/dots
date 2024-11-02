@@ -97,7 +97,6 @@ return { -- LSP Configuration & Plugins
       sqlls = {},
       svelte = {},
       prismals = {},
-      ltex = {},
       astro = {},
       autotools_ls = {}, -- for Make files support
       terraformls = {},
