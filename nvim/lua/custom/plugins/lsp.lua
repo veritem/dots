@@ -24,6 +24,21 @@ return {
     },
   },
   config = function(_, opts)
+    vim.api.nvim_create_autocmd("LspAttach", {
+      group = vim.api.nvim_create_augroup("lsp-attach", {clear = true}),
+      callback = function (event)
+        local map = function (keys, func, desc, mode)
+          mode = mode or 'n'
+          vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: "..desc }) 
+        end
+
+        map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+        map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+        map('gd', require("telescope.builtin").lsp_definitions, '[G]oto [D]efinition')
+        map('gr', require("telescope.builtin").lsp_references, '[G]oto [R]eferences')
+        map('K', vim.lsp.buf.hover, 'Hover Documentation')
+      end
+    })
     local lspconfig = require 'lspconfig'
 
     for server, config in pairs(opts.servers) do
