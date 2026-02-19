@@ -10,6 +10,7 @@ return {
       'html',
       'lua',
       'yaml',
+      'yml',
       'markdown',
       'vim',
       'vimdoc',

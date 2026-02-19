@@ -14,7 +14,9 @@ vim.opt.showmode = false
 vim.opt.swapfile = false
 
 -- Sync clipboard between OS and Neovim.
-vim.opt.clipboard = 'unnamedplus'
+vim.schedule(function()
+  vim.o.clipboard = 'unnamedplus'
+end)
 
 vim.opt.autoread = true
 
@@ -33,6 +35,9 @@ vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
+
+-- max line width for all text files
+vim.opt.textwidth = 100
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -62,3 +67,6 @@ vim.opt.scrolloff = 10
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
+
+-- auto completion is annoying without this
+vim.cmd 'set completeopt+=noselect'
