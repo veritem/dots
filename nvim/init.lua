@@ -11,12 +11,6 @@ vim.lsp.enable {
   'gh_actions',
 }
 
-vim.filetype.add {
-  extension = {
-    astro = 'astro',
-  },
-}
-
 vim.lsp.enable 'clangd'
 vim.lsp.enable 'astro'
 vim.lsp.enable 'rust'
@@ -45,7 +39,7 @@ vim.pack.add {
   { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin', priority = 1000, background = { light = 'latte', dark = 'mocha' }, favor = 'mocha' },
   { src = 'https://github.com/nvim-telescope/telescope-ui-select.nvim', name = 'telescope-ui-select' },
   { src = 'https://github.com/nvim-lua/plenary.nvim', name = 'plenary' },
-  { src = 'https://github.com/nvim-telescope/telescope.nvim', name = 'telescope' },
+  -- { src = 'https://github.com/nvim-telescope/telescope.nvim', name = 'telescope' },
   'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/saghen/blink.lib',
   'https://github.com/j-hui/fidget.nvim',
@@ -70,10 +64,11 @@ ts.install {
   'css',
   'html',
   'rust',
+  'astro',
 }
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'svelte', 'javascript', 'css', 'html', 'rust' },
+  pattern = { 'svelte', 'javascript', 'css', 'html', 'rust', 'astro' },
   callback = function()
     vim.treesitter.start()
   end,
@@ -182,80 +177,7 @@ mason_tool_installer.setup {
   },
 }
 
-require('telescope').setup {
-  -- You can put your default mappings / updates / etc. in here
-  --  All the info you're looking for is in `:help telescope.setup()`
-  --
-  defaults = {
-    --   mappings = {
-    --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-    file_ignore_patterns = {
-      'node_modules',
-      'target',
-      'dist',
-      '.git',
-      'build',
-      '.next',
-      '.sveltekit',
-      '.venv',
-      '.docker',
-    },
-  },
-  -- },
-  pickers = {
-    find_files = {
-      hidden = true,
-    },
-  },
-  extensions = {
-    ['ui-select'] = {
-      require('telescope.themes').get_dropdown(),
-    },
-  },
-}
-
--- Enable telescope extensions, if they are installed
-pcall(require('telescope').load_extension, 'fzf')
-pcall(require('telescope').load_extension, 'ui-select')
-
--- See `:help telescope.builtin`
-local builtin = require 'telescope.builtin'
-vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
-vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
-vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-
--- Slightly advanced example of overriding default behavior and theme
-vim.keymap.set('n', '<leader>/', function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
-end, { desc = '[/] Fuzzily search in current buffer' })
-
--- Also possible to pass additional configuration options.
---  See `:help telescope.builtin.live_grep()` for information about particular keys
-vim.keymap.set('n', '<leader>s/', function()
-  builtin.live_grep {
-    grep_open_files = true,
-    prompt_title = 'Live Grep in Open Files',
-  }
-end, { desc = '[S]earch [/] in Open Files' })
-
--- Shortcut for searching your neovim configuration files
-vim.keymap.set('n', '<leader>sn', function()
-  builtin.find_files { cwd = vim.fn.stdpath 'config' }
-end, { desc = '[S]earch [N]eovim files' })
-
---- lsp
--- disable lsp on .env.* files
+-- lsp: disable lsp on .env.* files
 vim.api.nvim_create_autocmd('BufReadPre', {
   pattern = { '.env', '.env.*' },
   callback = function()
@@ -266,37 +188,15 @@ vim.api.nvim_create_autocmd('BufReadPre', {
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp_attach', { clear = true }),
   callback = function(event)
-    -- NOTE: Remember that Lua is a real programming language, and as such it is possible
-    -- to define small helper and utility functions so you don't have to repeat yourself.
-    --
-    -- In this case, we create a function that lets us more easily define mappings specific
     -- for LSP related items. It sets the mode, buffer and description for us each time.
     local map = function(keys, func, desc, mode)
       mode = mode or 'n'
       vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
     end
 
-    -- Jump to the definition of the word under your cursor.
-    --  This is where a variable was first declared, or where a function is defined, etc.
-    --  To jump back, press <C-t>.
-    map('grd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-
     -- WARN: This is not Goto Definition, this is Goto Declaration.
     --  For example, in C this would take you to the header.
     map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-
-    -- Fuzzy find all the symbols in your current document.
-    --  Symbols are things like variables, functions, types, etc.
-    map('gO', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
-
-    -- Fuzzy find all the symbols in your current workspace.
-    --  Similar to document symbols, except searches over your entire project.
-    map('gW', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
-
-    -- Jump to the type of the word under your cursor.
-    --  Useful when you're not sure what type a variable is and you want to see
-    --  the definition of its *type*, not where it was *defined*.
-    map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
 
     -- When you move your cursor, the highlights will be cleared (the second autocommand).
     local client = vim.lsp.get_client_by_id(event.data.client_id)
@@ -322,10 +222,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end,
       })
     end
-
-    -- The following code creates a keymap to toggle inlay hints in your
-    -- code, if the language server you are using supports them
-    --
     -- This may be unwanted, since they displace some of your code
     if client and client:supports_method('textDocument/inlayHint', event.buf) then
       map('<leader>th', function()
@@ -335,7 +231,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- Diagnostic Config
 -- See :help vim.diagnostic.Opts
 vim.diagnostic.config {
   severity_sort = true,
@@ -364,21 +259,8 @@ vim.diagnostic.config {
   },
 }
 
--- LSP servers and clients are able to communicate to each other what features they support.
---  By default, Neovim doesn't support everything that is in the LSP specification.
---  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
---  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
 local capabilities = require('blink.cmp').get_lsp_capabilities()
 
--- Enable the following language servers
---  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
---
---  Add any additional override configuration in the following tables. Available keys are:
---  - cmd (table): Override the default command used to start the server
---  - filetypes (table): Override the default list of associated filetypes for the server
---  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
---  - settings (table): Override the default settings passed when initializing the server.
---        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 local servers = {
   -- clangd = {},
   -- gopls = {},
@@ -413,9 +295,6 @@ require('mason-lspconfig').setup {
   handlers = {
     function(server_name)
       local server = servers[server_name] or {}
-      -- This handles overriding only values explicitly passed
-      -- by the server configuration above. Useful when disabling
-      -- certain features of an LSP (for example, turning off formatting for ts_ls)
       server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
       require('lspconfig')[server_name].setup(server)
     end,
@@ -429,14 +308,11 @@ cmp.setup {
   sources = {
     default = { 'lsp', 'path', 'snippets', 'buffer' },
   },
-
   fuzzy = { implementation = 'prefer_rust_with_warning' },
   keymap = { preset = 'default' },
-
   appearance = {
     nerd_font_variant = 'mono',
   },
-
   completion = { documentation = { auto_show = false } },
 }
 
